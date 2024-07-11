@@ -1197,6 +1197,13 @@
 
         function levatarPickit() {
 
+            $("#uuid").val('');
+            $("#pickit_price").val('');
+            $("#pickitPrice").html('');
+
+            $('#cart-total-d').text(decimalNumberFormatWithCurrency(parseFloat(totalOriginalCart)));
+
+
             let opcionPickitMarcado = $('input[type="radio"][name="opcionPickit"]:checked').val();
             if (opcionPickitMarcado == 'Pickit-PP') {
                 MostrarPuntosPickitFiltrados(address);
@@ -1355,6 +1362,7 @@
                    // }
                     $("#pickitPrice").html(decimalNumberFormatWithCurrency(parseFloat(result)));
                     $("#uuid").val(uuid);
+                    $("#pickit_price").val(result);
 
                 },
                 error: function(xhr) {
