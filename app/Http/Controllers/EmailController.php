@@ -104,7 +104,7 @@ class EmailController extends Controller
             }
         } else {
             $retrun = $this->sendPhpEmail($to, $subject, $messageBody, $emailInfo, '');
-            if (empty($return)) {
+            if (empty($retrun)) {
                 $this->response = $this->failResponse;
             }
         }
