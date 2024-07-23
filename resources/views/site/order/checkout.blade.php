@@ -1314,11 +1314,15 @@
 
                 },
                 success: function(data) {
+                    if (data.results && data.results.totalPrice !== null && data.results.totalPrice !== undefined) {
 
                     result = data.results.totalPrice;
                     uuid = data.results.uuid;
                     $("#pickitPrice").html(decimalNumberFormatWithCurrency(parseFloat(result)));
                     $("#uuid").val(uuid);
+                    }else {
+                        alert('El valor de envio no pudo obtenerse o no esta activo, intente de nuevo');
+                    }
                 },
                 error: function(xhr) {
                     alert('Error al obtener los puntos geográficos.');
@@ -1352,6 +1356,7 @@
 
                 },
                 success: function(data) {
+                    if (data.results && data.results.totalPrice !== null && data.results.totalPrice !== undefined) {
 
                     result = data.results.totalPrice;
                     uuid = data.results.uuid;
@@ -1363,6 +1368,9 @@
                     $("#pickitPrice").html(decimalNumberFormatWithCurrency(parseFloat(result)));
                     $("#uuid").val(uuid);
                     $("#pickit_price").val(result);
+                    }else {
+                        alert('El valor de envio no pudo obtenerse o no esta activo, intente de nuevo');
+                    }
 
                 },
                 error: function(xhr) {
